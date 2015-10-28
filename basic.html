@@ -24,6 +24,7 @@
         <p><a href="{{ site.url }}/">nEDM Experiment</a></p>
 {% if site.github.is_project_page %}
         <p><a href="{{ site.url }}/{{ site.github.repository_name }}">Top</a></p>
+        <p><a href="{{ site.github.repository_url }}">Repository</a></p>
 {% if site.subsystems %}
         <h4>Sub-pages:</h4>
         <ul>
@@ -35,7 +36,6 @@
         </ul>
 {% endif %}
 {% endif %}
-        <p><a href="{{ site.github.repository_url }}">Repository</a></p>
       </header>
       <section>
      {{ content }}
