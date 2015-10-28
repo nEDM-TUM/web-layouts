@@ -24,7 +24,6 @@
         <p><a href="{{ site.url }}/">nEDM Experiment</a></p>
 {% if site.github.is_project_page %}
         <p><a href="{{ site.url }}/{{ site.github.repository_name }}">Top</a></p>
-        <p><a href="{{ site.github.repository_url }}">Repository</a></p>
 {% if site.subsystems %}
         <h4>Sub-pages:</h4>
         <ul>
@@ -36,10 +35,11 @@
         </ul>
 {% endif %}
 {% endif %}
+        <p><a href="{{ site.github.repository_url }}">Repository</a></p>
       </header>
       <section>
      {{ content }}
-{% if site.is_index %}
+{% if page.is_index %}
 {% if site.subsystems %}
         <h3 id="available-pages">Available pages</h3>
         <ul>
