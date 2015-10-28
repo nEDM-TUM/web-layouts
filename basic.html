@@ -16,13 +16,13 @@
   <body>
     <div class="wrapper">
       <header>
-{% if site.usertitle == blank %}
-        <h1>{{ site.github.project_title }}</h1>
-{% else %}
+{% if site.usertitle %}
         <h1>{{ site.usertitle }}</h1>
+{% else %}
+        <h1>{{ site.github.project_title }}</h1>
 {% endif %}
         <p><a href="{{ site.url }}/">Head</a></p>
-{% if site.github.is_user_page %}
+{% if site.github.is_project_page %}
         <p><a href="{{ site.github.repository_url }}">Repository</a></p>
 {% endif %}
       </header>
