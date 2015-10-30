@@ -16,14 +16,16 @@
   <body>
     <div class="wrapper">
       <header>
+{% assign mytitle = site.github.project_title %}
 {% if site.usertitle %}
+{% assign mytitle = site.usertitle %}
         <h1>{{ site.usertitle }}</h1>
 {% else %}
         <h1>{{ site.github.project_title }}</h1>
 {% endif %}
         <p><a href="{{ site.url }}/">nEDM Experiment</a></p>
 {% if site.github.is_project_page %}
-        <p><a href="{{ site.url }}/{{ site.github.repository_name }}">Top</a></p>
+        <p><a href="{{ site.url }}/{{ site.github.repository_name }}">{{ mytitle }}</a></p>
         <p><a href="{{ site.github.repository_url }}">Repository</a></p>
 {% if site.subsystems %}
         <h4>Sub-pages:</h4>
