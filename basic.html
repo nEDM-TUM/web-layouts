@@ -16,6 +16,10 @@
   <body>
     <div class="wrapper">
       <header>
+{% if site.subsystems %}
+  {% assign subs = site.subsystems | sort: 'title', 'last' %}
+  {% assign subs = subs | sort: 'order', 'last' %}
+{% endif %}
 {% assign mytitle = site.github.project_title %}
 {% if site.usertitle %}
 {% assign mytitle = site.usertitle %}
@@ -27,11 +31,9 @@
 {% if site.github.is_project_page %}
         <p><a href="{{ site.url }}/{{ site.github.repository_name }}">{{ mytitle }}</a></p>
         <p><a href="{{ site.github.repository_url }}">Repository</a></p>
-{% assign subs = null %}
-{% if site.subsystems %}
+{% if subs %}
         <h4>Sub-pages:</h4>
         <ul>
-        {% assign subs = site.subsystems | sort: 'order', 'last' %}
         {% for post in subs %}
           <li>
             <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
@@ -44,7 +46,7 @@
       <section>
      {{ content }}
 {% if page.is_index %}
-{% if site.subsystems %}
+{% if subs %}
         <h3 id="available-pages">Available pages</h3>
         <ul>
 
