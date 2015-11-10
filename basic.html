@@ -30,7 +30,8 @@
 {% if site.subsystems %}
         <h4>Sub-pages:</h4>
         <ul>
-        {% assign subs = site.subsystems | sort: 'order', 'title' %}
+        {% assign subs = site.subsystems | sort: 'title', 'last' %}
+        {% assign subs = subs | sort: 'order', 'last' %}
         {% for post in subs %}
           <li>
             <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
@@ -47,7 +48,6 @@
         <h3 id="available-pages">Available pages</h3>
         <ul>
 
-        {% assign subs = site.subsystems | sort: 'order', 'title' %}
         {% for post in subs %}
           <li>
             <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - {{ post.description }}
