@@ -30,7 +30,8 @@
 {% if site.subsystems %}
         <h4>Sub-pages:</h4>
         <ul>
-        {% for post in site.subsystems %}
+        {% assign subs = site.subsystems | sort: 'order', 'title' %}
+        {% for post in subs %}
           <li>
             <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
           </li>
